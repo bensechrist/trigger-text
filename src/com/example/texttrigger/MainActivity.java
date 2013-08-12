@@ -32,12 +32,14 @@ public class MainActivity extends Activity {
 		ifilter.addAction("android.provider.Telephony.SMS_RECEIVED");
 		registerReceiver(receiver, ifilter);
 		
+		SMSReceiver.prefs = getSharedPreferences("Trigger Word", 0);
+		
 		try {
 			Log.i("Trigger", "Trigger is " + SMSReceiver.prefs.getString("Trigger", null));
 			mtv.setText(SMSReceiver.prefs.getString("Trigger", null));
 		}
 		catch (Exception e) {
-			Log.e("Exception", "There was an exception and it was " + e);
+			e.printStackTrace();
 		}
 		
 		btn.setOnClickListener(new OnClickListener() {
