@@ -37,7 +37,7 @@ public class MainActivity extends Activity {
 			mtv.setText(SMSReceiver.prefs.getString("Trigger", null));
 		}
 		catch (Exception e) {
-			Log.e("Exception", "There was an exception " + e);
+			Log.e("Exception", "There was an exception and it was " + e);
 		}
 		
 		btn.setOnClickListener(new OnClickListener() {
